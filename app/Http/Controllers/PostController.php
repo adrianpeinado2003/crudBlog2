@@ -18,19 +18,13 @@ class PostController extends Controller
             'categoria' => 'required|numeric',
         ]);
 
-        $nombre = $request->input('nombre');
-        $contenido = $request->input('contenido');
-        $id_categoria = $request->input('categoria');
+        $post = new Post();
+        $post->nombre = $request->nombre;
+        $post->contenido = $request->contenido;
+        $post->id_categoria = $request->categoria;
+        $post->id_autor = Auth::id();
+        $post->save();
 
-        DB::table('post')->insert(
-            array(
-                'id' => '0',
-                'nombre' => $nombre,
-                'contenido' => $contenido,
-                'id_categoria' => $id_categoria,
-                'id_autor' => Auth::id(),
-            )
-        );
         return redirect("postView");
     }
 
@@ -40,11 +34,8 @@ class PostController extends Controller
             'id' => 'required|numeric',
         ]);
 
-        $id = $request->input('id');
-
-        DB::table('post')
-            ->where('id', $id)
-            ->delete();
+        $post = Post::find($request->id);
+        $post->delete();
 
         return redirect("postView");
     }
@@ -57,10 +48,6 @@ class PostController extends Controller
 
     public function edit(Request $request)
     {
-        /* $post = Post::find($id);
-        $post->nombre = $request->nombre;
-        $post->save(); */
-
         $request->validate([
             'nombre' => 'required',
             'contenido' => 'required',
@@ -68,14 +55,11 @@ class PostController extends Controller
             'id' => 'required|numeric',
         ]);
 
-        $nombre = $request->input('nombre');
-        $contenido = $request->input('contenido');
-        $id_categoria = $request->input('categoria');
-        $id = $request->input('id');
-
-        DB::table('post')
-            ->where('id', $id)
-            ->update(['nombre' => $nombre, 'contenido' => $contenido, 'id_categoria' => $id_categoria]);
+        $post = Post::find($request->id);
+        $post->nombre = $request->nombre;
+        $post->contenido = $request->contenido;
+        $post->id_categoria = $request->categoria;
+        $post->save();
 
         return redirect("postView");
     }
