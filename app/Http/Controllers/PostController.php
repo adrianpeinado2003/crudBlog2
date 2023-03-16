@@ -57,11 +57,9 @@ class PostController extends Controller
 
     public function edit(Request $request)
     {
-        $post = Post::find($id);
-
-        $post->nombre = $reuqest->nombre;
-
-        $post->save();
+        /* $post = Post::find($id);
+        $post->nombre = $request->nombre;
+        $post->save(); */
 
         $request->validate([
             'nombre' => 'required',
