@@ -15,14 +15,9 @@ class CategoriaController extends Controller
             'nombre' => 'required',
         ]);
 
-        $nombre = $request->input('nombre');
-
-        DB::table('categoria')->insert(
-            array(
-                'id' => '0',
-                'nombre' => $nombre,
-            )
-        );
+        $categoria = new Categoria();
+        $categoria->nombre = $request->nombre;
+        $categoria->save();
 
         return redirect('categoriaView');
     }
@@ -33,11 +28,8 @@ class CategoriaController extends Controller
             'id' => 'required|numeric',
         ]);
 
-        $id = $request->input('id');
-
-        DB::table('categoria')
-            ->where('id', $id)
-            ->delete();
+        $categoria = Categoria::find($request->id);
+        $categoria->delete();
 
         return redirect('categoriaView');
     }
@@ -62,12 +54,9 @@ class CategoriaController extends Controller
             'id' => 'required|numeric',
         ]);
 
-        $nombre = $request->input('nombre');
-        $id = $request->input('id');
-
-        DB::table('categoria')
-            ->where('id', $id)
-            ->update(['nombre' => $nombre]);
+        $categoria = Categoria::find($request->id);
+        $categoria->nombre = $request->nombre;
+        $categoria->save();
 
         return redirect('categoriaView');
     }

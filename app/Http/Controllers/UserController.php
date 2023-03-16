@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
@@ -19,14 +20,11 @@ class UserController extends Controller
             'id' => 'required|numeric',
         ]);
 
-        $nombre = $request->input('nombre');
-        $email = $request->input('email');
-        $password = Hash::make($request->input('password'));
-        $id = $request->input('id');
-
-        DB::table('users')
-            ->where('id', $id)
-            ->update(['name' => $nombre, 'email' => $email, 'password' => $password]);
+        $user = User::find($request->id);
+        $user->name = $request->nombre;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->save();
 
         return redirect("userView");
     }
@@ -38,39 +36,30 @@ class UserController extends Controller
             'email' => 'required|email',
         ]);
 
-        $nombre = $request->input('nombre');
-        $email = $request->input('email');
-
-        DB::table('users')
-            ->where('id', Auth::id())
-            ->update(['name' => $nombre, 'email' => $email]);
+        $user = User::find(Auth::id());
+        $user->name = $request->nombre;
+        $user->email = $request->email;
+        $user->save();
 
         return view("index");
     }
 
-    public function deleteFromAdmin(Request $request)
+    public function delete(Request $request)
     {
         $request->validate([
             'id' => 'required|numeric',
         ]);
 
-        $id = $request->input('id');
-
-        DB::table('users')
-            ->where('id', $id)
-            ->delete();
+        $user = User::find($request->id);
+        $user->delete();
 
         return redirect('userView');
     }
 
     public function view()
     {
-        return view("/verUsuarios")->with([
-            "users" =>
-            DB::table('users')
-                ->select('*')
-                ->get()
-        ]);
+        $users = User::all();
+        return view('verUsuarios', compact('users'));
     }
 
     public function create(Request $request)
@@ -81,18 +70,11 @@ class UserController extends Controller
             'contraseña' => 'required',
         ]);
 
-        $nombre = $request->input('nombre');
-        $email = $request->input('email');
-        $password = Hash::make($request->input('contraseña'));
-
-        DB::table('users')->insert(
-            array(
-                'id' => '0',
-                'name' => $nombre,
-                'email' => $email,
-                'password' => $password,
-            )
-        );
+        $user = new User();
+        $user->name = $request->nombre;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->save();
 
         return redirect('userView');
     }

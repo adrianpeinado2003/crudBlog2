@@ -103,7 +103,7 @@ Route::get('/categoriaEdit', [CategoriaController::class, 'edit'])->middleware('
 
 Route::get('/userCreate', [UserController::class, 'create'])->middleware('auth.admin');
 
-Route::get('/userDeleteFromAdmin', [UserController::class, 'deleteFromAdmin'])->middleware('auth.admin');
+Route::get('/userDelete', [UserController::class, 'delete'])->middleware('auth.admin');
 
 Route::get('/userEditFromAdmin', [UserController::class, 'editFromAdmin'])->middleware('auth.admin');
 

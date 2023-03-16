@@ -77,7 +77,7 @@
                                                         </form>
                                                     </td>
                                                     <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                                        <form action="/userDeleteFromAdmin">
+                                                        <form action="/userDelete">
                                                             <input type="text" id="id" name="id"
                                                                 value="{{ $u->id }}" style="display: none" />
                                                             <button type="submit"
