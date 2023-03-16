@@ -76,20 +76,20 @@
                                 @endisset
                             </tbody>
                         </table>
+                        <br>
                     {{-- </div>
                 </div>
             </div>
         </div> --}}
         @if (auth()->check())
             @if (auth()->user()->role == 'admin')
-                <div class="flex justify-center">
-                    <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
+                {{-- <div class="flex justify-center">
+                    <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init> --}}
                         <form action="añadirCategoria">
                             <button type="submit"
                             class="btn btn-primary">Añadir
                                 categoría</button>
                         </form>
-                        <br>
                         <form action="admin">
                             <button type="submit"
                             class="btn btn-primary">Volver</button>
@@ -99,13 +99,13 @@
                             <button type="submit"
                             class="btn btn-primary">Volver</button>
                         </form>
-                    </div>
-                </div>
+                  {{--   </div>
+                </div> --}}
             @endif
         @endif
     @else
-        <div class="flex justify-center">
-            <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
+        {{-- <div class="flex justify-center">
+            <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init> --}}
                 <form action="login">
                     @csrf
                     <button type="submit"
@@ -118,7 +118,7 @@
                     <button type="submit"
                     class="btn btn-primary">Registrarse</button>
                 </form>
-            </div>
-        </div>
+            {{-- </div>
+        </div> --}}
     @endif
 @endsection

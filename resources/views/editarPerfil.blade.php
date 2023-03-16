@@ -10,7 +10,7 @@
                     @csrf
                     <input type="text" id="id" name="id" value="Auth::id()" style="display: none" />
                     <div>
-                        <label for="nombre">Nombre</label>
+                        <label for="nombre" class="form-label">Nombre</label>
                         @error('nombre')
                             <div>
                                 <p style="color: red">Por favor, asigne un nombre</p>
@@ -35,7 +35,7 @@
                     </div>
                     <br>
                     <div>
-                        <label for="email">Email</label>
+                        <label for="email" class="form-label">Email</label>
                         @error('email')
                             <div>
                                 <p style="color: red">Por favor, asigne un email</p>

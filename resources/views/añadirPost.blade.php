@@ -9,7 +9,7 @@
                 <form action="/postCreate">
                     @csrf
                     <div>
-                        <label for="nombre">Nombre</label>
+                        <label for="nombre" class="form-label">Nombre</label>
                         @error('nombre')
                             <div>
                                 <p style="color: red">Por favor, asigne un nombre</p>
@@ -34,7 +34,7 @@
                     </div>
                     <br>
                     <div>
-                        <label for="contenido">Contenido</label>
+                        <label for="contenido" class="form-label">Contenido</label>
                         @error('contenido')
                             <div>
                                 <p style="color: red">Por favor, desarrolle un contenido</p>
@@ -45,7 +45,7 @@
                     </div>
                     <br>
                     <div>
-                        <label for="categoria">Categoría</label>
+                        <label for="categoria" class="form-label">Categoría</label>
                         @error('categoria')
                             <div>
                                 <p style="color: red">Por favor, seleccione una categoria</p>

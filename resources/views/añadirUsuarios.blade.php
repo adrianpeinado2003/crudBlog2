@@ -9,7 +9,7 @@
                 <form action="/userCreate">
                     @csrf
                     <div>
-                        <label for="nombre">Nombre</label>
+                        <label for="nombre" class="form-label">Nombre</label>
                         @error('nombre')
                             <div>
                                 <p style="color: red">Por favor, asigne un nombre</p>
@@ -34,7 +34,7 @@
                     </div>
                     <br>
                     <div>
-                        <label for="email">Email</label>
+                        <label for="email" class="form-label">Email</label>
                         @error('email')
                             <div>
                                 <p style="color: red">Por favor, asigne un email</p>
@@ -59,7 +59,7 @@
                     </div>
                     <br>
                     <div>
-                        <label for="contraseña">Contraseña</label>
+                        <label for="contraseña" class="form-label">Contraseña</label>
                         @error('contraseña')
                             <div>
                                 <p style="color: red">Por favor, asigne une contraseña</p>

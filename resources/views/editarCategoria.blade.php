@@ -10,7 +10,7 @@
                     @csrf
                     <input type="text" id="id" name="id" value="{{ $_GET['id'] }}" style="display: none" />
                     <div>
-                        <label for="nombre">Nombre</label>
+                        <label for="nombre" class="form-label">Nombre</label>
                         @error('nombre')
                             <div>
                                 <p style="color: red">Por favor, asigne un nombre</p>
