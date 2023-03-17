@@ -76,4 +76,9 @@ class PostController extends Controller
         return view('verPosts', compact('posts'));
     }
 
+    public function verMisPosts(){
+        $posts = Post::where('id_autor', Auth::id())->get();
+        return view('verPosts', compact('posts'));
+    }
+
 }

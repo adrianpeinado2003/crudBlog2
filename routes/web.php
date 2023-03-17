@@ -46,7 +46,7 @@ Route::get('/verCategorias', function () {
 Route::get('/añadirPost', function () {
     $categorias = Categoria::all();
     return view('añadirPost', compact('categorias'));
-})->middleware('auth.admin');
+});
 
 Route::get('/añadirCategoria', function () {
     return view('añadirCategoria');
@@ -79,7 +79,7 @@ Route::get('/register', [RegisterController::class, 'index']);
 
 Route::get('/admin', [AdminController::class, 'index'])->middleware('auth.admin');
 
-Route::get('/postCreate', [PostController::class, 'create'])->middleware('auth.admin');
+Route::get('/postCreate', [PostController::class, 'create']);
 
 Route::get('/postDelete', [PostController::class, 'delete'])->middleware('auth.admin');
 
@@ -92,6 +92,8 @@ Route::get('/verPostsCategoria', [CategoriaController::class, 'viewPosts']);
 Route::get('/verCategoriaPosts', [PostController::class, 'verCategoriaPosts']);
 
 Route::get('/verAutorPosts', [PostController::class, 'verAutorPosts']);
+
+Route::get('/verMisPosts', [PostController::class, 'verMisPosts']);
 
 Route::get('/categoriaCreate', [CategoriaController::class, 'create'])->middleware('auth.admin');
 
