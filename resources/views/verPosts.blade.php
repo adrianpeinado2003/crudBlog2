@@ -7,7 +7,7 @@
                 <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
                     <div class="overflow-hidden"> --}}
                         <table class="table align-middle">
-                            <thead class="border-b">
+                            <thead class="table-dark">
                                 <tr>
                                     <th scope="col">
                                         ID

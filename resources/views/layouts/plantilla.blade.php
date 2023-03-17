@@ -7,27 +7,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <title>BLOGGER</title>
-    @vite(['resources/css/app.css'])
 </head>
 
 <body>
     <header>
         <nav
-            class="
-relative
-w-full
-flex flex-wrap
-items-center
-justify-between
-py-4
-bg-gray-100
-text-gray-500
-hover:text-gray-700
-focus:text-gray-700
-shadow-lg
-navbar navbar-expand-lg navbar-light
-">
+        class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid w-full flex flex-wrap items-center justify-between px-6">
                 <!-- Left links -->
                 <ul class="navbar-nav flex flex-col pl-0 list-style-none mr-auto">
@@ -66,7 +54,7 @@ navbar navbar-expand-lg navbar-light
                                     </div>
                                 </li>
                                 <li>
-                                    <a class="dropdown-toggle flex items-center hidden-arrow" href="/editarPerfil"
+                                    <a href="/editarPerfil"
                                         id="dropdownMenuButton2" role="button" data-bs-toggle="dropdown"
                                         aria-expanded="false">
                                         <img src="img/avatar.png" class="rounded-full" style="height: 25px; width: 25px"

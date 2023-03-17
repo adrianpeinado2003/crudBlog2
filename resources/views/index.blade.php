@@ -7,96 +7,28 @@
                 <form action="postView">
                     @csrf
                     <button type="submit"
-                        class="
-            w-full
-            px-6
-            py-2.5
-            bg-blue-600
-            text-black
-            font-medium
-            text-xs
-            leading-tight
-            uppercase
-            rounded
-            shadow-md
-            hover:bg-blue-700 hover:shadow-lg
-            focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
-            active:bg-blue-800 active:shadow-lg
-            transition
-            duration-150
-            ease-in-out">Ver
+                        class="btn btn-primary">Ver
                         posts</button>
                 </form>
                 <br>
                 <form action="categoriaView">
                     @csrf
                     <button type="submit"
-                        class="
-            w-full
-            px-6
-            py-2.5
-            bg-blue-600
-            text-black
-            font-medium
-            text-xs
-            leading-tight
-            uppercase
-            rounded
-            shadow-md
-            hover:bg-blue-700 hover:shadow-lg
-            focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
-            active:bg-blue-800 active:shadow-lg
-            transition
-            duration-150
-            ease-in-out">Ver
+                        class="btn btn-primary">Ver
                         categorías</button>
                 </form>
             @else
                 <form action="login">
                     @csrf
                     <button type="submit"
-                        class="
-        w-full
-        px-6
-        py-2.5
-        bg-blue-600
-        text-black
-        font-medium
-        text-xs
-        leading-tight
-        uppercase
-        rounded
-        shadow-md
-        hover:bg-blue-700 hover:shadow-lg
-        focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
-        active:bg-blue-800 active:shadow-lg
-        transition
-        duration-150
-        ease-in-out">Iniciar
+                        class="btn btn-primary">Iniciar
                         sesión</button>
                 </form>
                 <br>
                 <form action="register">
                     @csrf
                     <button type="submit"
-                        class="
-        w-full
-        px-6
-        py-2.5
-        bg-blue-600
-        text-black
-        font-medium
-        text-xs
-        leading-tight
-        uppercase
-        rounded
-        shadow-md
-        hover:bg-blue-700 hover:shadow-lg
-        focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
-        active:bg-blue-800 active:shadow-lg
-        transition
-        duration-150
-        ease-in-out">Registrarse</button>
+                        class="btn btn-primary">Registrarse</button>
                 </form>
             @endif
         </div>
