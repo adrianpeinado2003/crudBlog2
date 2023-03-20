@@ -90,6 +90,42 @@
                 @endisset
             </tbody>
         </table>
+        <div class="box" style="display: flex">
+            @isset($posts)
+                @foreach ($posts as $p)
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $p->nombre }}</h5>
+                            <p class="card-text">{{ $p->contenido }}</p>
+                            <div class="box" style="display: flex">
+                                <div>
+                                    <a>
+                                        <form action="/editarPost" method="GET">
+                                            <input type="text" id="id" name="id" value="{{ $p->id }}"
+                                                style="display: none" />
+                                            <input type="text" id="nombre" name="nombre" value="{{ $p->nombre }}"
+                                                style="display: none" />
+                                            <input type="text" id="contenido" name="contenido" value="{{ $p->contenido }}"
+                                                style="display: none" />
+                                            <button type="submit" class="btn btn-primary">Editar</button>
+                                        </form>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a>
+                                        <form action="/postDelete">
+                                            <input type="text" id="id" name="id" value="{{ $p->id }}"
+                                                style="display: none" />
+                                            <button type="submit" class="btn btn-primary">Borrar</button>
+                                        </form>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        @endisset
         <br>
         {{-- </div>
                 </div>
