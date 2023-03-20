@@ -101,10 +101,12 @@
             <button type="submit" class="btn btn-primary">Añadir
                 post</button>
         </form>
+        <br>
         <form action="verMisPosts">
             <button type="submit" class="btn btn-primary">Ver mis
                 posts</button>
         </form>
+        <br>
         @if (auth()->check())
             @if (auth()->user()->role == 'admin')
                 <form action="admin">
